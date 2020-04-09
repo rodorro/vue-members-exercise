@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-container>
     <h2>Member Page</h2>
     <search-bar-component :search-text="organization" :on-search="onSearch" :on-load="loadMembers"/>
     <table :class="$style.table">
@@ -12,7 +12,7 @@
         </template>
       </tbody>
     </table>
-  </div>
+  </v-container>
 </template>
 
 <script lang="ts">

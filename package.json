@@ -4,7 +4,7 @@
   "description": "Sample working with TypeScript and Webpack",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server --open",
     "build": "webpack"
   },
   "repository": {
@@ -17,7 +17,7 @@
     "typescript",
     "webpack"
   ],
-  "author": "Lemoncode",
+  "author": "Iban",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Lemoncode/vuejs-by-sample/issues"
@@ -43,6 +43,7 @@
   },
   "dependencies": {
     "vue": "^2.5.17",
-    "vuetify": "^2.2.21"
+    "vuetify": "^1.5.22",
+    "vue-router": "^3.1.5"
   }
 }
