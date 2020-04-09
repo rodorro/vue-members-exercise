@@ -9,6 +9,11 @@
     <td :class="$style.column">
       <span>{{member.login}}</span>
     </td>
+    <td :class="$style.editButton">
+      <v-btn flat icon :to="`member/${member.id}`">
+        <v-icon>edit</v-icon>
+      </v-btn>
+    </td>
   </tr>
 </template>
 
@@ -36,5 +41,9 @@ export default Vue.extend({
 .column {
   width: 33.33%;
   text-align: center;
+}
+
+.edit-button {
+  text-align: end;
 }
 </style>

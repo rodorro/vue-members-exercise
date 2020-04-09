@@ -35,3 +35,23 @@ export const getAllMembers = (organizationName: string): Promise<Member[]> => {
     .then(response => parseJSON(response))
     .then(data => resolveMembers(data));
 };
+
+const resolveMember = (data: any): Member => {
+
+  var member: Member = createDefaultMember();
+
+  member.id = data.id;
+  member.login = data.login;
+  member.avatar_url = data.avatar_url;
+
+  return member;
+};
+
+export const getMember = (id: string): Promise<Member> => {
+  const gitHubMemberUrl: string = `https://api.github.com/user/${id}`;
+
+  return fetch(gitHubMemberUrl)
+    .then(response => checkStatus(response))
+    .then(response => parseJSON(response))
+    .then(data => resolveMember(data));
+};
