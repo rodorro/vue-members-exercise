@@ -1,9 +1,7 @@
 <template>
   <div>
     <h2>Member Page</h2>
-    <search-bar-component :search-text="organization" :on-search="onSearch" />
-    <!-- <input type="text" :value="organization" @input="onchange($event)"/> -->
-    <button @click="loadMembers">Load</button>
+    <search-bar-component :search-text="organization" :on-search="onSearch" :on-load="loadMembers"/>
     <table :class="$style.table">
       <thead>
         <member-head/>
@@ -33,17 +31,14 @@ export default Vue.extend({
     members: [] as Member[]
   }),
   methods: {
-    loadMembers: function() {
+    loadMembers() {
       getAllMembers(this.organization).then(members => {
         this.members = members;
       });
     },
     onSearch(value: string) {
       this.organization = value;
-    },
-    // onChange: function(event) {
-    //   console.log(event);
-    // }
+    }
   }
 });
 </script>
